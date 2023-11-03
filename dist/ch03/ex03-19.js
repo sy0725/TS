@@ -15,9 +15,13 @@
     };
     function printUser(user) {
         // User 타입일 경우 나이 출력
-        if ("age" in user && typeof user.age === "number") {
+        if (isUser(user)) {
             console.log(user.nickname);
         }
+    }
+    // 타입 가드 함수
+    function isUser(user) {
+        return typeof user.age === "number";
     }
     printUser(kim);
     printUser(lee);
