@@ -2,19 +2,29 @@
 // ex03-04.ts 복사
 (() => {
     var todo1 = {
-        title: '할일 1',
-        content: '등록에 사용'
+        title: "할일 1",
+        content: "등록에 사용",
     };
     var todo2 = {
         _id: 2,
-        title: '할일 2',
-        content: '상세조회에 사용',
-        done: true
+        title: "할일 2",
+        content: "상세조회에 사용",
+        done: true,
     };
     var todo3 = {
         _id: 3,
-        title: '할일 3',
-        done: false
+        title: "할일 3",
+        done: false,
     };
+    function printTodo(todo) {
+        if ("_id" in todo) {
+            console.log(`[TodoInfo] _id : ${todo._id} , title : ${todo.title}`);
+        }
+        else {
+            console.log(`[TodoRegist] title : ${todo.title}`);
+        }
+    }
+    printTodo(todo1);
+    printTodo(todo2);
     console.log(todo1, todo2, todo3);
 })();
